@@ -1,0 +1,16 @@
+<!-- postdetail.wxml -->
+<view class="post-detail">
+  <view class="post-title">{{post.title}}</view>
+  <view class="post-content">{{post.content}}</view>
+
+  <view class="reply-list">
+    <view class="reply-item" wx:for="{{replies}}" wx:key="index">
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <view class="reply-input">
+    <input placeholder="请输入回复" bindinput="onReplyInput" value="{{replyInput}}" />
+    <button bindtap="onReplySubmit">提交回复</button>
+  </view>
+</view>

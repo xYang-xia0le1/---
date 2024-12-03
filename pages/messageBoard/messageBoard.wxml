@@ -1,0 +1,16 @@
+<view class="container">
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <textarea placeholder="请输入您的留言..." auto-height bindinput="onInput" value="{{inputValue}}"></textarea>
+    <button bindtap="onSubmit">提交留言</button>
+  </view>
+
+  <!-- 留言显示区域 -->
+  <view class="message-list">
+    <block wx:for="{{messages}}" wx:key="index">
+      <view class="message-item">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+/* postdetail.wxss */
+.post-detail {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.post-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.post-content {
+  font-size: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.reply-list {
+  margin-top: 30rpx;
+}
+
+.reply-item {
+  padding: 10rpx;
+  background-color: #f5f5f5;
+  margin-bottom: 15rpx;
+  border-radius: 5rpx;
+}
+
+.reply-input {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.reply-input input {
+  width: 80%;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+}
+
+.reply-input button {
+  width: 20%;
+  padding: 10rpx;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5rpx;
+}

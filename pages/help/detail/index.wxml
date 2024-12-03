@@ -1,0 +1,33 @@
+<view class="container">
+  <!-- 求助内容 -->
+  <view class="help-content">
+    <view class="help-header">
+      <text class="help-type">{{helpDetail.type}}</text>
+      <text class="help-status">{{helpDetail.status}}</text>
+    </view>
+    <text class="help-time">{{helpDetail.time}}</text>
+    <text class="help-text">{{helpDetail.content}}</text>
+  </view>
+
+  <!-- 回复列表 -->
+  <view class="replies-section">
+    <view class="section-title">回复记录</view>
+    <view class="reply-list">
+      <view class="reply-item {{item.admin ? 'admin' : ''}}" 
+            wx:for="{{helpDetail.replies}}" 
+            wx:key="time">
+        <text class="reply-content">{{item.content}}</text>
+        <text class="reply-time">{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 回复输入框 -->
+  <view class="reply-input">
+    <input type="text" 
+           placeholder="请输入回复内容" 
+           bindinput="onReplyInput"
+           bindconfirm="submitReply"/>
+    <button class="submit-btn" bindtap="submitReply">回复</button>
+  </view>
+</view> 

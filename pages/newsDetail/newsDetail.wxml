@@ -1,0 +1,15 @@
+<view class="container">
+  <!-- 新闻图片 -->
+  <image class="news-image" src="{{newsData.image}}" mode="aspectFill" />
+  
+  <!-- 新闻标题 -->
+  <text class="news-title">{{newsData.title}}</text>
+  
+  <!-- 新闻详细内容 -->
+  <view class="news-content">
+    <text>{{newsData.content}}</text>
+  </view>
+  
+  <!-- 返回按钮 -->
+  <button class="back-button" bindtap="goBack">返回</button>
+</view>

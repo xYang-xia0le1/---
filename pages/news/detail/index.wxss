@@ -1,0 +1,104 @@
+.container {
+  min-height: 100vh;
+  background: #fff;
+  padding-bottom: 40rpx;
+}
+
+.article-header {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.article-title {
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-time {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.article-stats {
+  display: flex;
+  gap: 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+}
+
+.stat-icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.stat-item text {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.cover-image {
+  width: 100%;
+  height: auto;
+}
+
+.article-content {
+  padding: 30rpx;
+}
+
+.content {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.8;
+}
+
+.article-paragraph {
+  margin-bottom: 30rpx;
+}
+
+.article-paragraph h3 {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.article-paragraph p {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 16rpx;
+}
+
+.article-footer {
+  margin-top: 60rpx;
+  padding: 30rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.footer-text {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  display: block;
+}
+
+.footer-text:not(:last-child) {
+  margin-bottom: 10rpx;
+} 

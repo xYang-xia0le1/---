@@ -1,0 +1,40 @@
+/* 页面容器 */
+.container {
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+/* 新闻图片 */
+.news-image {
+  width: 100%;
+  height: 300rpx; /* 适当设置高度 */
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  object-fit: cover;
+}
+
+/* 新闻标题 */
+.news-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+/* 新闻内容 */
+.news-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 20rpx;
+}
+
+/* 返回按钮 */
+.back-button {
+  margin-top: 30rpx;
+  padding: 12rpx 20rpx;
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 5rpx;
+  text-align: center;
+}

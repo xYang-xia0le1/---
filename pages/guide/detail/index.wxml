@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="article">
+    <text class="title">{{guide.title}}</text>
+    <view class="meta">
+      <text class="time">{{guide.time}}</text>
+      <text class="views">{{guide.views}}阅读</text>
+    </view>
+    <rich-text nodes="{{guide.content}}" class="content"></rich-text>
+  </view>
+</view> 

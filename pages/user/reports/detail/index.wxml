@@ -1,0 +1,75 @@
+<view class="container">
+  <!-- 状态栏 -->
+  <view class="status-bar {{report.status}}">
+    <text class="status-text">{{report.statusText}}</text>
+    <text class="report-time">{{report.time}}</text>
+  </view>
+
+  <!-- 举报内容 -->
+  <view class="content-section">
+    <view class="section-title">举报内容</view>
+    <view class="report-type">
+      <text class="label">举报类型：</text>
+      <text class="value">{{report.typeText}}</text>
+    </view>
+    <view class="report-content">
+      <text class="label">详细描述：</text>
+      <text class="value">{{report.content}}</text>
+    </view>
+    <view class="report-images" wx:if="{{report.images.length > 0}}">
+      <text class="label">图片凭证：</text>
+      <view class="image-list">
+        <image wx:for="{{report.images}}" 
+               wx:key="*this"
+               src="{{item}}"
+               mode="aspectFill"
+               bindtap="previewImage"
+               data-url="{{item}}"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 处理进度 -->
+  <view class="progress-section">
+    <view class="section-title">处理进度</view>
+    <view class="progress-list">
+      <view class="progress-item {{item.done ? 'done' : ''}}"
+            wx:for="{{progressList}}"
+            wx:key="step">
+        <view class="progress-dot"></view>
+        <view class="progress-info">
+          <text class="progress-title">{{item.title}}</text>
+          <text class="progress-time">{{item.time}}</text>
+          <text class="progress-desc" wx:if="{{item.desc}}">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 补充说明 -->
+  <view class="updates-section" wx:if="{{report.updates.length > 0}}">
+    <view class="section-title">补充说明</view>
+    <view class="update-list">
+      <view class="update-item" 
+            wx:for="{{report.updates}}" 
+            wx:key="time">
+        <text class="update-time">{{item.time}}</text>
+        <text class="update-content">{{item.content}}</text>
+        <view class="update-images" wx:if="{{item.images.length > 0}}">
+          <image wx:for="{{item.images}}" 
+                 wx:key="*this"
+                 wx:for-item="image"
+                 src="{{image}}"
+                 mode="aspectFill"
+                 bindtap="previewImage"
+                 data-url="{{image}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-bar" wx:if="{{report.status === 'processing'}}">
+    <button class="update-btn" bindtap="onUpdate">补充说明</button>
+  </view>
+</view> 

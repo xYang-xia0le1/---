@@ -1,0 +1,77 @@
+<view class="container">
+  <!-- 状态标签 -->
+  <scroll-view class="status-scroll" scroll-x>
+    <view class="status-list">
+      <view class="status-item {{currentStatus === 'all' ? 'active' : ''}}"
+            bindtap="switchStatus" 
+            data-status="all">
+        全部举报
+      </view>
+      <view class="status-item {{currentStatus === 'pending' ? 'active' : ''}}"
+            bindtap="switchStatus" 
+            data-status="pending">
+        待处理
+      </view>
+      <view class="status-item {{currentStatus === 'processing' ? 'active' : ''}}"
+            bindtap="switchStatus" 
+            data-status="processing">
+        处理中
+      </view>
+      <view class="status-item {{currentStatus === 'completed' ? 'active' : ''}}"
+            bindtap="switchStatus" 
+            data-status="completed">
+        已完成
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 举报列表 -->
+  <view class="report-list">
+    <view class="report-item" 
+          wx:for="{{reportList}}" 
+          wx:key="id"
+          bindtap="onReportDetail"
+          data-id="{{item.id}}">
+      <view class="report-header">
+        <text class="report-type">{{item.typeText}}</text>
+        <text class="report-status {{item.status}}">{{item.statusText}}</text>
+      </view>
+      <view class="report-content">
+        <text class="report-desc">{{item.content}}</text>
+        <view class="report-images" wx:if="{{item.images.length > 0}}">
+          <image wx:for="{{item.images}}" 
+                 wx:key="*this"
+                 wx:for-item="image"
+                 src="{{image}}"
+                 mode="aspectFill"
+                 catchtap="previewImage"
+                 data-urls="{{item.images}}"
+                 data-current="{{image}}"/>
+        </view>
+      </view>
+      <view class="report-footer">
+        <text class="report-time">{{item.time}}</text>
+        <view class="report-actions">
+          <button class="action-btn" 
+                  catchtap="onCancel" 
+                  data-id="{{item.id}}"
+                  wx:if="{{item.status === 'pending'}}">
+            撤销
+          </button>
+          <button class="action-btn primary" 
+                  catchtap="onUpdate" 
+                  data-id="{{item.id}}"
+                  wx:if="{{item.status === 'processing'}}">
+            补充
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{reportList.length === 0}}">
+      <image src="/assets/icons/empty_report.png"/>
+      <text>暂无举报记录</text>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,78 @@
+/* 帖子列表容器 */
+.post-list {
+  padding: 20rpx;
+  background-color: #f9f9f9;
+}
+
+/* 单个帖子卡片 */
+.post-item {
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 鼠标悬浮时的效果 */
+.post-item:hover {
+  transform: translateY(-10rpx);
+  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 帖子头部（标题和时间） */
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.post-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-time {
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+/* 帖子内容部分 */
+.post-content {
+  margin-bottom: 20rpx;
+}
+
+.post-text {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #555;
+}
+
+.post-image {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+
+/* 帖子底部的回复按钮 */
+.post-footer {
+  text-align: right;
+}
+
+.reply-btn {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 28rpx;
+  border: none;
+  padding: 10rpx 20rpx;
+  border-radius: 5rpx;
+  cursor: pointer;
+}
+
+.reply-btn:hover {
+  background-color: #45a049;
+}

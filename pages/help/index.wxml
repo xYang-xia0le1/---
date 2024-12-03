@@ -1,0 +1,98 @@
+<!--pages/help/index.wxml-->
+<view class="container">
+  <!-- 紧急求助按钮 -->
+  <view class="emergency-section">
+    <view class="emergency-btn" bindtap="callEmergency">
+      <image src="/assets/icons/emergency.png" class="emergency-icon"/>
+      <text>紧急求助</text>
+    </view>
+    <text class="emergency-tip">遇到紧急情况请点击此处</text>
+  </view>
+
+  <!-- 常用电话 -->
+  <view class="quick-call">
+    <view class="section-title">常用电话</view>
+    <view class="phone-list">
+      <view class="phone-item" 
+            wx:for="{{phoneList}}" 
+            wx:key="number"
+            bindtap="makeCall" 
+            data-number="{{item.number}}">
+        <image src="{{item.icon}}" class="phone-icon"/>
+        <view class="phone-info">
+          <text class="phone-name">{{item.name}}</text>
+          <text class="phone-number">{{item.number}}</text>
+        </view>
+        <image src="/assets/icons/call.png" class="call-icon"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 在线求助 -->
+  <view class="online-help">
+    <view class="section-title">在线求助</view>
+    <view class="help-form">
+      <view class="form-item">
+        <text class="form-label">求助类型</text>
+        <view class="type-grid">
+          <view class="type-item {{selectedType === item.id ? 'active' : ''}}"
+                wx:for="{{helpTypes}}" 
+                wx:key="id"
+                bindtap="selectType"
+                data-type="{{item.id}}">
+            <image src="{{item.icon}}" class="type-icon"/>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="form-item">
+        <text class="form-label">问题描述</text>
+        <textarea class="help-content" 
+                  placeholder="请详细描述您遇到的问题..."
+                  maxlength="500"
+                  bindinput="onContentInput"
+                  value="{{content}}"/>
+        <text class="word-count">{{content.length}}/500</text>
+      </view>
+
+      <view class="form-item">
+        <text class="form-label">联系方式</text>
+        <input class="contact-input" 
+               placeholder="请输入您的手机号码"
+               type="number"
+               maxlength="11"
+               bindinput="onPhoneInput"
+               value="{{phone}}"/>
+      </view>
+
+      <button class="submit-btn" 
+              bindtap="submitHelp" 
+              disabled="{{!canSubmit}}">
+        提交求助
+      </button>
+    </view>
+  </view>
+
+  <!-- 求助记录 -->
+  <view class="help-records">
+    <view class="section-header">
+      <text class="section-title">求助记录</text>
+      <text class="more-text" bindtap="viewAllRecords">查看全部</text>
+    </view>
+    <view class="record-list">
+      <view class="record-item" 
+            wx:for="{{records}}" 
+            wx:key="id"
+            bindtap="viewRecord"
+            data-id="{{item.id}}">
+        <view class="record-status {{item.status}}">{{item.statusText}}</view>
+        <view class="record-info">
+          <text class="record-type">{{item.typeText}}</text>
+          <text class="record-time">{{item.time}}</text>
+        </view>
+        <text class="record-content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>

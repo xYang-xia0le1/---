@@ -1,0 +1,30 @@
+.container {
+  padding: 30rpx;
+  background: #fff;
+}
+
+.article {
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.meta {
+  display: flex;
+  gap: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #333;
+} 

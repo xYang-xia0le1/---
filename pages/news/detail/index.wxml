@@ -1,0 +1,32 @@
+<view class="container">
+  <!-- 文章头部 -->
+  <view class="article-header">
+    <text class="article-title">{{newsDetail.title}}</text>
+    <view class="article-meta">
+      <text class="article-time">{{newsDetail.time}}</text>
+      <view class="article-stats">
+        <view class="stat-item">
+          <image src="/assets/icons/view.png" class="stat-icon"/>
+          <text>{{newsDetail.views}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 封面图片 -->
+  <image wx:if="{{newsDetail.coverImage}}" 
+         src="{{newsDetail.coverImage}}" 
+         mode="widthFix" 
+         class="cover-image"/>
+
+  <!-- 文章内容 -->
+  <view class="article-content">
+    <rich-text nodes="{{newsDetail.content}}" class="content"></rich-text>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="article-footer">
+    <text class="footer-text">如遇到可疑情况，请及时拨打110报警</text>
+    <text class="footer-text">反诈中心热线：96110</text>
+  </view>
+</view> 

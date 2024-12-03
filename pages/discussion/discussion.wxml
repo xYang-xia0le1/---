@@ -1,0 +1,20 @@
+<view class="post-list">
+  <!-- 遍历每个帖子 -->
+  <view class="post-item" bindtap="onPostClick" data-id="{{item.id}}" wx:for="{{posts}}" wx:key="id">
+    <view class="post-header">
+      <!-- 帖子标题 -->
+      <text class="post-title">{{item.title}}</text>
+      <!-- 帖子发布时间 -->
+      <text class="post-time">{{item.date}}</text>
+    </view>
+    <view class="post-content">
+      <!-- 帖子内容 -->
+      <text class="post-text">{{item.content}}</text>
+      <!-- 如果帖子有图片 -->
+      <image wx:if="{{item.image}}" src="{{item.image}}" mode="aspectFill" class="post-image" />
+    </view>
+    <view class="post-footer">
+      <button class="reply-btn">回复</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="container">
+  <view wx:if="{{tipDetail}}" class="tip-content">
+    <text class="tip-title">{{tipDetail.title}}</text>
+    <view class="tip-meta">
+      <text class="tip-time">{{tipDetail.time}}</text>
+      <text class="tip-views">{{tipDetail.views}}阅读</text>
+    </view>
+    <image wx:if="{{tipDetail.coverImage}}" 
+           src="{{tipDetail.coverImage}}" 
+           mode="widthFix" 
+           class="cover-image"/>
+    <rich-text nodes="{{tipDetail.content}}" class="content"></rich-text>
+  </view>
+  <view wx:else class="empty-state">
+    <text>内容加载中...</text>
+  </view>
+</view> 

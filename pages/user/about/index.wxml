@@ -1,0 +1,77 @@
+<!--pages/user/about/index.wxml-->
+<view class="container">
+  <!-- 头部Logo -->
+  <view class="header">
+    <image class="logo" src="/assets/logo.png" mode="aspectFit"/>
+    <text class="app-name">半亩塘安全平台</text>
+    <text class="version">版本 1.0.0</text>
+  </view>
+
+  <!-- 平台介绍 -->
+  <view class="section">
+    <view class="section-title">平台介绍</view>
+    <text class="section-content">半亩塘安全平台致力于为用户提供全方位的安全防护服务，包括诈骗防范、安全教育、举报处理等功能，帮助用户远离网络安全风险。</text>
+  </view>
+
+  <!-- 功能特点 -->
+  <view class="section">
+    <view class="section-title">功能特点</view>
+    <view class="feature-list">
+      <view class="feature-item">
+        <image src="/assets/icons/feature_report.png"/>
+        <text>安全举报</text>
+      </view>
+      <view class="feature-item">
+        <image src="/assets/icons/feature_check.png"/>
+        <text>安全检测</text>
+      </view>
+      <view class="feature-item">
+        <image src="/assets/icons/feature_guide.png"/>
+        <text>安全指南</text>
+      </view>
+      <view class="feature-item">
+        <image src="/assets/icons/feature_help.png"/>
+        <text>求助中心</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="section">
+    <view class="section-title">联系我们</view>
+    <view class="contact-list">
+      <view class="contact-item" bindtap="copyText" data-text="service@bantang.com">
+        <image src="/assets/icons/email.png"/>
+        <text>service@bantang.com</text>
+        <text class="copy-text">复制</text>
+      </view>
+      <view class="contact-item" bindtap="copyText" data-text="400-123-4567">
+        <image src="/assets/icons/phone.png"/>
+        <text>400-123-4567</text>
+        <text class="copy-text">复制</text>
+      </view>
+      <view class="contact-item">
+        <image src="/assets/icons/location.png"/>
+        <text>浙江省杭州市西湖区</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 合作伙伴 -->
+  <view class="section">
+    <view class="section-title">合作伙伴</view>
+    <view class="partner-list">
+      <image wx:for="{{partners}}" 
+             wx:key="*this"
+             src="{{item}}"
+             mode="aspectFit"
+             class="partner-logo"/>
+    </view>
+  </view>
+
+  <!-- 底部版权 -->
+  <view class="footer">
+    <text>Copyright © 2024 半亩塘安全平台</text>
+    <text>All Rights Reserved</text>
+  </view>
+</view>

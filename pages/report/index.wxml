@@ -1,0 +1,67 @@
+<!--pages/report/index.wxml-->
+<view class="container">
+  <!-- 举报类型 -->
+  <view class="section">
+    <view class="section-title">举报类型</view>
+    <view class="type-list">
+      <view class="type-item {{selectedType === item.id ? 'active' : ''}}"
+            wx:for="{{reportTypes}}" 
+            wx:key="id"
+            bindtap="selectType"
+            data-type="{{item.id}}">
+        <image class="type-icon" src="{{item.icon}}" mode="aspectFit"/>
+        <text class="type-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 举报内容 -->
+  <view class="section">
+    <view class="section-title">举报内容</view>
+    <textarea class="content-input"
+              placeholder="请详细描述您要举报的内容..."
+              maxlength="500"
+              bindinput="onContentInput"/>
+  </view>
+
+  <!-- 图片上传 -->
+  <view class="section">
+    <view class="section-title">图片上传</view>
+    <view class="image-list">
+      <view class="image-item" 
+            wx:for="{{images}}" 
+            wx:key="*this">
+        <image src="{{item}}" 
+               mode="aspectFill"
+               bindtap="previewImage"
+               data-url="{{item}}"/>
+        <view class="delete-btn"
+              catchtap="deleteImage"
+              data-index="{{index}}">×</view>
+      </view>
+      <view class="upload-btn" 
+            bindtap="chooseImage"
+            wx:if="{{images.length < 3}}">
+        <text>+</text>
+        <text class="upload-text">上传图片</text>
+      </view>
+    </view>
+    <text class="tip-text">最多可上传3张图片</text>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="section">
+    <view class="section-title">联系方式</view>
+    <input class="phone-input"
+           type="number"
+           maxlength="11"
+           placeholder="请输入手机号码"
+           bindinput="onPhoneInput"/>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button class="submit-btn {{canSubmit ? 'active' : ''}}"
+          bindtap="submitReport">
+    提交举报
+  </button>
+</view>

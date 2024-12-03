@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="news-list">
+    <view class="news-item" wx:for="{{newsList}}" wx:key="id" bindtap="onNewsDetail" data-id="{{item.id}}">
+      <image class="news-image" src="{{item.image}}" mode="aspectFill"/>
+      <view class="news-info">
+        <text class="news-title">{{item.title}}</text>
+        <text class="news-brief">{{item.brief}}</text>
+        <view class="news-meta">
+          <text class="news-time">{{item.time}}</text>
+          <text class="news-views">{{item.views}}阅读</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

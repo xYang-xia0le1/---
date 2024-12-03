@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guide/index",
+    "pages/guide/detail/index",
+    "pages/news/list/index",
+    "pages/news/detail/index",
+    "pages/tips/list/index",
+    "pages/tips/detail/index",
+    "pages/report/index",
+    "pages/check/index",
+    "pages/help/index",
+    "pages/user/index",
+    "pages/user/collects/index",
+    "pages/user/reports/index",
+    "pages/user/reports/detail/index",
+    "pages/user/reports/update/index",
+    "pages/user/helps/index",
+    "pages/user/settings/index",
+    "pages/user/about/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3A7FED",
+    "navigationBarTitleText": "半亩塘安全平台",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#3A7FED",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home.png"
+      },
+      {
+        "pagePath": "pages/guide/index",
+        "text": "安全指南",
+        "iconPath": "assets/tabbar/guide.png",
+        "selectedIconPath": "assets/tabbar/guide.png"
+      },
+      {
+        "pagePath": "pages/help/index",
+        "text": "求助",
+        "iconPath": "assets/tabbar/help.png",
+        "selectedIconPath": "assets/tabbar/help.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "assets/tabbar/user.png",
+        "selectedIconPath": "assets/tabbar/user.png"
+      }
+    ]
+  }
+}
+

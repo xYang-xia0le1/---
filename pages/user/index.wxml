@@ -1,0 +1,62 @@
+<!--pages/user/index.wxml-->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-section">
+    <view class="user-info" bindtap="onLogin">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/assets/icons/default_avatar.png'}}"/>
+      <view class="info-right">
+        <text class="nickname">{{userInfo.nickName || '点击登录'}}</text>
+        <text class="user-id" wx:if="{{userInfo.userId}}">ID: {{userInfo.userId}}</text>
+      </view>
+      <view class="arrow" wx:if="{{!hasUserInfo}}">
+        <image src="/assets/icons/arrow_right.png"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="menu-section">
+    <view class="menu-group">
+      <view class="menu-item" catch:tap="onMyCollects">
+        <image class="menu-icon" src="/assets/icons/collect.png"/>
+        <text class="menu-text">我的收藏</text>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png"/>
+      </view>
+      <view class="menu-item" catch:tap="onMyReports">
+        <image class="menu-icon" src="/assets/icons/report.png"/>
+        <text class="menu-text">我的举报</text>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png"/>
+      </view>
+      <view class="menu-item" catch:tap="onMyHelps">
+        <image class="menu-icon" src="/assets/icons/help.png"/>
+        <text class="menu-text">求助记录</text>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png"/>
+      </view>
+    </view>
+
+    <view class="menu-group">
+      <view class="menu-item" catch:tap="onSettings">
+        <image class="menu-icon" src="/assets/icons/settings.png"/>
+        <text class="menu-text">设置</text>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png"/>
+      </view>
+      <view class="menu-item" catch:tap="onAbout">
+        <image class="menu-icon" src="/assets/icons/about.png"/>
+        <text class="menu-text">关于我们</text>
+        <image class="arrow-icon" src="/assets/icons/arrow_right.png"/>
+      </view>
+      <button class="contact-btn" open-type="contact">
+        <view class="menu-item">
+          <image class="menu-icon" src="/assets/icons/service.png"/>
+          <text class="menu-text">联系客服</text>
+          <image class="arrow-icon" src="/assets/icons/arrow_right.png"/>
+        </view>
+      </button>
+    </view>
+  </view>
+
+  <!-- 退出登录按钮 -->
+  <view class="logout-section" wx:if="{{userInfo.nickName}}">
+    <button class="logout-btn" bindtap="onLogout">退出登录</button>
+  </view>
+</view>

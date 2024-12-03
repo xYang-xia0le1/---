@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="tips-list">
+    <view class="tip-item" 
+          wx:for="{{tipsList}}" 
+          wx:key="id"
+          bindtap="onTipDetail"
+          data-id="{{item.id}}">
+      <image class="tip-image" src="{{item.image}}" mode="aspectFill"/>
+      <view class="tip-content">
+        <text class="tip-title">{{item.title}}</text>
+        <text class="tip-brief">{{item.brief}}</text>
+        <view class="tip-meta">
+          <text class="tip-time">{{item.time}}</text>
+          <text class="tip-views">{{item.views}}阅读</text>
+        </view>
+      </view>
+      <view class="tip-type {{item.type}}">
+        <text>{{item.type === 'warning' ? '警告' : item.type === 'danger' ? '危险' : '提示'}}</text>
+      </view>
+    </view>
+  </view>
+</view> 
